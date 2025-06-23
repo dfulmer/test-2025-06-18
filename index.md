@@ -85,16 +85,16 @@ EDI Invoice files can be imported into Alma two different ways: manually via the
 With this method, files can be emailed to the library and imported into Alma one by one.
 
 ## FTP or SFTP
-With this method the vendor provides the library with credentials to log in to an FTP or SFTP server where the vendor will place new EDI invoice files. The credentials must allow Alma to log in to the server, retrieve files, and rename files. Alma checks the server every day for new files. If a new file is found, the file will be imported into Alma and the name of the file on the server will be changed to something like this: 202409239.edi6381.VEND-1727151032658.handled. Once the name of the file is renamed with the “.handled” suffix that means the file has been imported by Alma and may be removed from the server. It is also okay to leave the file on the server indefinitely, since Alma will recognize any file with the “.handled” suffix as already retrieved.
+With this method the vendor provides the library with credentials to log in to an FTP or SFTP server where the vendor will place new EDI invoice files. The credentials must allow Alma to log in to the server, retrieve files, and rename files. Alma checks the server every day for new files. If a new file is found, the file will be imported into Alma and the name of the file on the server will be changed to something like this: 202409239.edi6381.VEND-1727151032658.handled. Once the name of the file is renamed with the ".handled" suffix that means the file has been imported by Alma and may be removed from the server. It is also okay to leave the file on the server indefinitely, since Alma will recognize any file with the “.handled” suffix as already retrieved.
 
 # File Names
-Files can have any name and any file extension. A good way of naming files and keeping them unique is to use the invoice number followed by the “.edi” file extension. So, an invoice with the number 123 would have an EDI invoice file with the name “123.edi”. There is a limit to the number of characters in file names. If a file name with extension is longer than 38 characters then Alma will be unable to import the file with the error message “Input file does not exist”.
+Files can have any name and any file extension. A good way of naming files and keeping them unique is to use the invoice number followed by the ".edi" file extension. So, an invoice with the number 123 would have an EDI invoice file with the name "123.edi". There is a limit to the number of characters in file names. If a file name with extension is longer than 38 characters, then Alma will be unable to import the file with the error message “Input file does not exist”.
 
 # EDI Invoice Setup
 In order to establish a successful EDI invoice workflow between vendor and library the vendor should carefully review this implementation guide and then try to create an EDI invoice file to accompany one of its invoices. Then, send the EDI invoice file and a PDF of the invoice to the library so that the library can import the sample EDI invoice file into Alma using the manual method and then compare the results to the PDF of the invoice. The library can then provide feedback to the vendor.
 
 # Firm Order Workflow versus Approval Plan Workflow
-With a Firm Order Workflow the library places an order with a vendor and both the vendor and the library have the order number in their respective systems. With the Firm Order Workflow, the vendor can include the order number with each invoice line in an RFF+LI segment as a match point in the EDI invoice file. Here is an example of information about an invoice line from an EDI invoice file where both the vendor and the library have the order number in their respective systems. It is line number 1, quantity of 1, price $10, and the Buyer's order line number is POL-178651:
+With a Firm Order Workflow, the library places an order with a vendor and both the vendor, and the library have the order number in their respective systems. With the Firm Order Workflow, the vendor can include the order number with each invoice line in an RFF+LI segment as a match point in the EDI invoice file. Here is an example of information about an invoice line from an EDI invoice file where both the vendor and the library have the order number in their respective systems. It is line number 1, quantity of 1, price $10, and the Buyer's order line number is POL-178651:
 
 ```
 LIN+1'
@@ -104,7 +104,7 @@ PRI+AAB:10'
 RFF+LI:POL-178651'
 ```
 
-With an Approval Plan Workflow the vendor sells material to the library without the library placing a specific order for each item. In this workflow the vendor will generally send order level records or Embedded Order Data (EOD) MARC records to the library to be imported into the library system. The EOD records will include a Vendor Reference Number and this number can also be used as a match point in the EDI invoice file. In this case the Vendor Reference Number should be in an RFF+SLI segment. Here is an example of information about an invoice line from an EDI invoice file where the vendor does not know the order number but both the vendor and the library have the Vendor Reference Number. It is line number 1, quantity of 1, price $10, and the Vendor Reference Number is 123:
+With an Approval Plan Workflow, the vendor sells material to the library without the library placing a specific order for each item. In this workflow the vendor will generally send order level records or Embedded Order Data (EOD) MARC records to the library to be imported into the library system. The EOD records will include a Vendor Reference Number, and this number can also be used as a match point in the EDI invoice file. In this case the Vendor Reference Number should be in an RFF+SLI segment. Here is an example of information about an invoice line from an EDI invoice file where the vendor does not know the order number, but both the vendor and the library have the Vendor Reference Number. It is line number 1, quantity of 1, price $10, and the Vendor Reference Number is 123:
 
 ```
 LIN+1'
@@ -115,7 +115,7 @@ RFF+SLI:123'
 ```
 
 # More Documentation
-Here is some more in depth documentation about Alma and EDI invoices.
+Here is some more in-depth documentation about Alma and EDI invoices.
 
 EDI integration in Alma
 [https://developers.exlibrisgroup.com/alma/integrations/edi/](https://developers.exlibrisgroup.com/alma/integrations/edi/)

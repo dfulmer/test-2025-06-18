@@ -15,7 +15,7 @@ EDI invoices are machine-readable versions of invoices which, when provided by v
 Here is an example of a simple EDI invoice file based on the following invoice with two lines.
 
 
-| Invoice         |                       |               |           |             |
+| Invoice         |.                       |.               |.           |.             |
 |----------------- |----------------------- |-------------- |----------- |------------- |
 | Invoice number: | 202409239             |               | Vendor:   | Vendor Inc. |
 | Invoice date:   | 09/23/2023             |               | Buyer:     | Library     |

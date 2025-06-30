@@ -9,7 +9,7 @@ title: An Implementation Guide for Vendors
 
 # Introduction
 
-EDI invoices are machine-readable versions of invoices which, when provided by vendors to libraries, may be imported into the Alma Library Services Platform to automatically create an invoice in the system without the necessity of manually entering the invoice information. This is a guide for vendors to help them learn how to create and provide EDI invoices to libraries.
+Electronic Data Interchange (EDI) invoices are machine-readable versions of invoices which, when provided by vendors to libraries, may be imported into the Alma Library Services Platform to automatically create an invoice in the system without the necessity of manually entering the invoice information. This is a guide for vendors to help them learn how to create and provide EDI invoices to libraries.
 
 # A Simple EDI Invoice File
 Here is an example of a simple EDI invoice file based on the following invoice with two lines.
